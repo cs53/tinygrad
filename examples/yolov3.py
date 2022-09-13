@@ -611,7 +611,7 @@ if __name__ == "__main__":
     cv2.destroyAllWindows()
   elif url.startswith('http'):
     img_stream = io.BytesIO(fetch(url))
-    img = cv2.imdecode(np.fromstring(img_stream.read(), np.uint8), 1)
+    img = cv2.imdecode(np.frombuffer(img_stream.read(), np.uint8), 1)
   else:
     img = cv2.imread(url)
   
